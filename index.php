@@ -1,4 +1,41 @@
+<?php
+$hasil = 0;
+$operator;
+if (isset($_POST['hasil'])) {
+    $nilai1 = $_POST['nilai1'];
+    $nilai2 = $_POST['nilai2'];
+   
+    // ambil niali operator
 
+    if (isset($_POST['tambah'])) {
+        $operator = "+";
+    } elseif (isset($_POST['kurang'])) {
+        $operator = "-";
+    } elseif (isset($_POST['kali'])) {
+        $operator = "x";
+    } elseif (isset($_POST['bagi'])) {
+        $operator = ":";
+    }
+    
+
+    switch ($operator) {
+        case "+":
+            $hasil = $nilai1 + $nilai2;
+            break;
+        
+        case "-";
+            $hasil = $nilai1 - $nilai2;
+            break;
+        case "x";
+           $hasil = $nilai1 * $nilai2;
+           break;
+        case ":";
+            $hasil = $nilai1 / $nilai2;
+            break;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
